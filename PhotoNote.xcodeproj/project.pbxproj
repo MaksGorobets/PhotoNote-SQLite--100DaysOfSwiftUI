@@ -11,6 +11,16 @@
 		E938C9902B63F64700D989C8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E938C98F2B63F64700D989C8 /* ContentView.swift */; };
 		E938C9922B63F64800D989C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E938C9912B63F64800D989C8 /* Assets.xcassets */; };
 		E938C9952B63F64800D989C8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E938C9942B63F64800D989C8 /* Preview Assets.xcassets */; };
+		E938C99D2B63FBA200D989C8 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = E938C99C2B63FBA200D989C8 /* SQLite */; };
+		E938C99F2B63FBD200D989C8 /* NoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E938C99E2B63FBD200D989C8 /* NoteModel.swift */; };
+		E938C9A12B63FC9200D989C8 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E938C9A02B63FC9200D989C8 /* DBManager.swift */; };
+		E938C9A32B63FDA500D989C8 /* FileManagerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = E938C9A22B63FDA500D989C8 /* FileManagerExt.swift */; };
+		E938C9A72B64062000D989C8 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E938C9A62B64062000D989C8 /* ContentViewModel.swift */; };
+		E938C9A92B64071700D989C8 /* NewNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E938C9A82B64071700D989C8 /* NewNoteView.swift */; };
+		E938C9AB2B64073200D989C8 /* NewNoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E938C9AA2B64073200D989C8 /* NewNoteViewModel.swift */; };
+		E938C9AD2B640C0D00D989C8 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E938C9AC2B640C0D00D989C8 /* UIImageExtensions.swift */; };
+		E938C9B12B641E2000D989C8 /* NoteDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E938C9B02B641E2000D989C8 /* NoteDetailView.swift */; };
+		E938C9B32B641E3600D989C8 /* NoteDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E938C9B22B641E3600D989C8 /* NoteDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +29,15 @@
 		E938C98F2B63F64700D989C8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E938C9912B63F64800D989C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E938C9942B63F64800D989C8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E938C99E2B63FBD200D989C8 /* NoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteModel.swift; sourceTree = "<group>"; };
+		E938C9A02B63FC9200D989C8 /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
+		E938C9A22B63FDA500D989C8 /* FileManagerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerExt.swift; sourceTree = "<group>"; };
+		E938C9A62B64062000D989C8 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		E938C9A82B64071700D989C8 /* NewNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNoteView.swift; sourceTree = "<group>"; };
+		E938C9AA2B64073200D989C8 /* NewNoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNoteViewModel.swift; sourceTree = "<group>"; };
+		E938C9AC2B640C0D00D989C8 /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
+		E938C9B02B641E2000D989C8 /* NoteDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetailView.swift; sourceTree = "<group>"; };
+		E938C9B22B641E3600D989C8 /* NoteDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E938C99D2B63FBA200D989C8 /* SQLite in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,7 +72,10 @@
 			isa = PBXGroup;
 			children = (
 				E938C98D2B63F64700D989C8 /* PhotoNoteApp.swift */,
-				E938C98F2B63F64700D989C8 /* ContentView.swift */,
+				E938C9AF2B640C4400D989C8 /* Model&DB */,
+				E938C9AE2B640C3000D989C8 /* Extensions */,
+				E938C9A52B64060C00D989C8 /* ViewModels */,
+				E938C9A42B64060000D989C8 /* VIews */,
 				E938C9912B63F64800D989C8 /* Assets.xcassets */,
 				E938C9932B63F64800D989C8 /* Preview Content */,
 			);
@@ -65,6 +88,44 @@
 				E938C9942B63F64800D989C8 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E938C9A42B64060000D989C8 /* VIews */ = {
+			isa = PBXGroup;
+			children = (
+				E938C98F2B63F64700D989C8 /* ContentView.swift */,
+				E938C9A82B64071700D989C8 /* NewNoteView.swift */,
+				E938C9B02B641E2000D989C8 /* NoteDetailView.swift */,
+			);
+			path = VIews;
+			sourceTree = "<group>";
+		};
+		E938C9A52B64060C00D989C8 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				E938C9A62B64062000D989C8 /* ContentViewModel.swift */,
+				E938C9AA2B64073200D989C8 /* NewNoteViewModel.swift */,
+				E938C9B22B641E3600D989C8 /* NoteDetailViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		E938C9AE2B640C3000D989C8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E938C9A22B63FDA500D989C8 /* FileManagerExt.swift */,
+				E938C9AC2B640C0D00D989C8 /* UIImageExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E938C9AF2B640C4400D989C8 /* Model&DB */ = {
+			isa = PBXGroup;
+			children = (
+				E938C99E2B63FBD200D989C8 /* NoteModel.swift */,
+				E938C9A02B63FC9200D989C8 /* DBManager.swift */,
+			);
+			path = "Model&DB";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +144,9 @@
 			dependencies = (
 			);
 			name = PhotoNote;
+			packageProductDependencies = (
+				E938C99C2B63FBA200D989C8 /* SQLite */,
+			);
 			productName = PhotoNote;
 			productReference = E938C98A2B63F64700D989C8 /* PhotoNote.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +175,9 @@
 				Base,
 			);
 			mainGroup = E938C9812B63F64700D989C8;
+			packageReferences = (
+				E938C99B2B63FBA200D989C8 /* XCRemoteSwiftPackageReference "SQLite" */,
+			);
 			productRefGroup = E938C98B2B63F64700D989C8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,8 +204,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E938C9AD2B640C0D00D989C8 /* UIImageExtensions.swift in Sources */,
+				E938C9B12B641E2000D989C8 /* NoteDetailView.swift in Sources */,
 				E938C9902B63F64700D989C8 /* ContentView.swift in Sources */,
+				E938C99F2B63FBD200D989C8 /* NoteModel.swift in Sources */,
+				E938C9A72B64062000D989C8 /* ContentViewModel.swift in Sources */,
+				E938C9A92B64071700D989C8 /* NewNoteView.swift in Sources */,
 				E938C98E2B63F64700D989C8 /* PhotoNoteApp.swift in Sources */,
+				E938C9B32B641E3600D989C8 /* NoteDetailViewModel.swift in Sources */,
+				E938C9AB2B64073200D989C8 /* NewNoteViewModel.swift in Sources */,
+				E938C9A32B63FDA500D989C8 /* FileManagerExt.swift in Sources */,
+				E938C9A12B63FC9200D989C8 /* DBManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +420,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E938C99B2B63FBA200D989C8 /* XCRemoteSwiftPackageReference "SQLite" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stephencelis/SQLite.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.14.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E938C99C2B63FBA200D989C8 /* SQLite */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E938C99B2B63FBA200D989C8 /* XCRemoteSwiftPackageReference "SQLite" */;
+			productName = SQLite;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E938C9822B63F64700D989C8 /* Project object */;
 }
