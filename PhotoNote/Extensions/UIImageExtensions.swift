@@ -4,6 +4,8 @@
 //
 //  Created by Maks Winters on 26.01.2024.
 //
+// https://stackoverflow.com/questions/29726643/how-to-compress-of-reduce-the-size-of-an-image-before-uploading-to-parse-as-pffi
+//
 
 import Foundation
 import UIKit

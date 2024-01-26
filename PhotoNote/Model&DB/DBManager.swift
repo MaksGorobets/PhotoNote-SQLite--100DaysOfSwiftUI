@@ -4,6 +4,10 @@
 //
 //  Created by Maks Winters on 26.01.2024.
 //
+// https://adnan-tech.com/create-read-update-and-delete-from-sqlite-swift-swift-ui/
+//
+// https://www.youtube.com/watch?v=c4wLS9py1rU&t=768s
+//
 
 import Foundation
 import SQLite

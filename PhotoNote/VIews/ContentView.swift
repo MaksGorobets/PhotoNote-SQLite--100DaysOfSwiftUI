@@ -4,6 +4,8 @@
 //
 //  Created by Maks Winters on 26.01.2024.
 //
+// https://www.hackingwithswift.com/books/ios-swiftui/deleting-items-using-ondelete
+//
 
 import SwiftUI
 

@@ -4,6 +4,8 @@
 //
 //  Created by Maks Winters on 26.01.2024.
 //
+// https://www.hackingwithswift.com/example-code/language/how-to-conform-to-the-hashable-protocol
+//
 
 import Foundation
 import UIKit

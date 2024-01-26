@@ -4,6 +4,8 @@
 //
 //  Created by Maks Winters on 26.01.2024.
 //
+// https://swiftwithmajid.com/2023/04/25/photospicker-in-swiftui/
+//
 
 import Foundation
 import SwiftUI
