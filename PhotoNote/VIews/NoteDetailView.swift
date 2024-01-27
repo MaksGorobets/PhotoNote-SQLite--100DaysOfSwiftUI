@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct NoteDetailView: View {
     
@@ -17,6 +18,8 @@ struct NoteDetailView: View {
             .scaledToFit()
         Text(viewModel.note.title)
             .font(.title)
+        Map(initialPosition: MapCameraPosition.region(MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: viewModel.note.latitude, longitude: viewModel.note.longitude), span: MapDetails.defaultSpan)))
+            .frame(height: 300)
         Spacer()
     }
     

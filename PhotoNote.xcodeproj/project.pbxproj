@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E9192D682B65890400C056D1 /* LocationFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9192D672B65890400C056D1 /* LocationFetcher.swift */; };
 		E938C98E2B63F64700D989C8 /* PhotoNoteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E938C98D2B63F64700D989C8 /* PhotoNoteApp.swift */; };
 		E938C9902B63F64700D989C8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E938C98F2B63F64700D989C8 /* ContentView.swift */; };
 		E938C9922B63F64800D989C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E938C9912B63F64800D989C8 /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E9192D672B65890400C056D1 /* LocationFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFetcher.swift; sourceTree = "<group>"; };
 		E938C98A2B63F64700D989C8 /* PhotoNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E938C98D2B63F64700D989C8 /* PhotoNoteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoNoteApp.swift; sourceTree = "<group>"; };
 		E938C98F2B63F64700D989C8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 			children = (
 				E938C99E2B63FBD200D989C8 /* NoteModel.swift */,
 				E938C9A02B63FC9200D989C8 /* DBManager.swift */,
+				E9192D672B65890400C056D1 /* LocationFetcher.swift */,
 			);
 			path = "Model&DB";
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 			files = (
 				E938C9AD2B640C0D00D989C8 /* UIImageExtensions.swift in Sources */,
 				E938C9B12B641E2000D989C8 /* NoteDetailView.swift in Sources */,
+				E9192D682B65890400C056D1 /* LocationFetcher.swift in Sources */,
 				E938C9902B63F64700D989C8 /* ContentView.swift in Sources */,
 				E938C99F2B63FBD200D989C8 /* NoteModel.swift in Sources */,
 				E938C9A72B64062000D989C8 /* ContentViewModel.swift in Sources */,
@@ -351,6 +355,7 @@
 				DEVELOPMENT_TEAM = XUYF93872P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Allow to store note's location.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -380,6 +385,7 @@
 				DEVELOPMENT_TEAM = XUYF93872P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Allow to store note's location.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

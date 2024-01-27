@@ -10,10 +10,20 @@
 import Foundation
 import SwiftUI
 import PhotosUI
+import MapKit
+
+enum MapDetails {
+    static let defaultRegion = CLLocationCoordinate2D(latitude: 8.7832, longitude: 124.5085)
+    static let defaultSpan = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
+}
 
 @Observable
 class NewNoteViewModel {
     private let dbManager = DBManager()
+    let locationFetcher = LocationFetcher()
+    
+    var rawLocation = MapDetails.defaultRegion
+    var currentPos = MapCameraPosition.region(MKCoordinateRegion(center: MapDetails.defaultRegion, span: MapDetails.defaultSpan))
     
     var photoData: Data?
     var photoImage: Image?
@@ -27,6 +37,16 @@ class NewNoteViewModel {
     }}
     var title: String = ""
     
+    func setLocation() {
+        if let location = locationFetcher.lastKnownLocation {
+            rawLocation = location
+            print(location)
+            currentPos = .region(MKCoordinateRegion(center: location, span: MapDetails.defaultSpan))
+        } else {
+            print("Your location is unknown")
+        }
+    }
+    
     func addNote() {
         print("Starting to add a note")
         guard let unwData = photoData else { return }
@@ -34,7 +54,7 @@ class NewNoteViewModel {
         guard !title.isEmpty else { return }
         print("Title - OK")
         
-        dbManager.addNote(photoData: unwData, titleValue: title)
+        dbManager.addNote(photoData: unwData, titleValue: title, longitudeValue: rawLocation.longitude, latitudeValue: rawLocation.latitude)
         print("Calling the addNote function")
         saved()
     }

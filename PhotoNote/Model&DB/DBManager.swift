@@ -21,10 +21,12 @@ class DBManager {
     private var id: Expression<Int64>!
     private var photo: Expression<Data>!
     private var title: Expression<String>!
+    private var longitude: Expression<Double>!
+    private var latitude: Expression<Double>!
     
-    func addNote(photoData: Data, titleValue: String) {
+    func addNote(photoData: Data, titleValue: String, longitudeValue: Double, latitudeValue: Double) {
         do {
-            try db.run(notesTable.insert(photo <- photoData, title <- titleValue))
+            try db.run(notesTable.insert(photo <- photoData, title <- titleValue, longitude <- longitudeValue, latitude <- latitudeValue))
             print("Saved the note")
         } catch {
             print(error.localizedDescription)
@@ -43,6 +45,8 @@ class DBManager {
                 newNoteModel.id = note[id]
                 newNoteModel.photo = note[photo]
                 newNoteModel.title = note[title]
+                newNoteModel.longitude = note[longitude]
+                newNoteModel.latitude = note[latitude]
                 
                 notes.append(newNoteModel)
             }
@@ -75,12 +79,16 @@ class DBManager {
             id = Expression<Int64>("id")
             photo = Expression<Data>("photo")
             title =  Expression<String>("title")
+            longitude = Expression<Double>("longitude")
+            latitude = Expression<Double>("latitude")
             
             if !UserDefaults.standard.bool(forKey: "is_db_created") {
                 let createdTable = notesTable.create { table in
                     table.column(id, primaryKey: true)
                     table.column(photo)
                     table.column(title)
+                    table.column(longitude)
+                    table.column(latitude)
                 }
                 
                 try db.run(createdTable)

@@ -7,6 +7,7 @@
 
 import SwiftUI
 import PhotosUI
+import MapKit
 
 struct NewNoteView: View {
     
@@ -21,6 +22,7 @@ struct NewNoteView: View {
                     .scaledToFit()
                     .clipShape(RoundedRectangle(cornerRadius: 25.0))
                     .padding()
+                    .transition(.scale)
             }
             TextField("Enter note title", text: $viewModel.title)
                 .padding()
@@ -32,6 +34,12 @@ struct NewNoteView: View {
                         viewModel.addNote()
                         dismiss()
                     }
+                }
+            Map(position: $viewModel.currentPos)
+                .frame(height: 300)
+            Spacer()
+                .onAppear {
+                    viewModel.setLocation()
                 }
             .navigationTitle("Add a note")
         }

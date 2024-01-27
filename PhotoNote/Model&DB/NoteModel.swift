@@ -27,6 +27,8 @@ class NoteModel: Identifiable, Comparable, Hashable {
     var id: Int64 = 0
     var photo: Data = Data()
     var title: String = ""
+    var longitude: Double = 0
+    var latitude: Double = 0
     
     var swiftUIImage: Image {
         let uiImage = UIImage(data: photo) ?? UIImage()
