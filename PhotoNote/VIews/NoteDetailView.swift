@@ -10,18 +10,31 @@ import MapKit
 
 struct NoteDetailView: View {
     
-    let viewModel: NoteDetailViewModel
+    @Bindable var viewModel: NoteDetailViewModel
     
     var body: some View {
-        viewModel.note.swiftUIImage
-            .resizable()
-            .scaledToFit()
-        Text(viewModel.note.title)
-            .font(.title)
-        Map(initialPosition: MapCameraPosition.region(MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: viewModel.note.latitude, longitude: viewModel.note.longitude), span: MapDetails.defaultSpan)))
-            .frame(height: 300)
-        Spacer()
-    }
+            ScrollView {
+                viewModel.note.swiftUIImage
+                    .resizable()
+                    .scaledToFit()
+                Text(viewModel.note.title)
+                    .font(.title)
+                Map(position: $viewModel.cameraPos) {
+                    Marker(viewModel.note.title, coordinate: viewModel.defaultCLLocation)
+                }
+                .frame(height: 250)
+                .allowsHitTesting(false)
+                .onAppear(perform: viewModel.getPosition)
+                Text(viewModel.locationString)
+                    .onAppear {
+                        viewModel.locationFetcher.lookUpCurrentLocation(rawLocation: viewModel.noteCLLocation) { placeStr in
+                            viewModel.locationString = placeStr
+                        }
+                    }
+            }
+            .navigationTitle(viewModel.note.title)
+            .navigationBarTitleDisplayMode(.inline)
+        }
     
     init(note: NoteModel) {
         self.viewModel = NoteDetailViewModel(note: note)

@@ -24,6 +24,8 @@ class NewNoteViewModel {
     
     var rawLocation = MapDetails.defaultRegion
     var currentPos = MapCameraPosition.region(MKCoordinateRegion(center: MapDetails.defaultRegion, span: MapDetails.defaultSpan))
+    var locationString = "Unknown location"
+
     
     var photoData: Data?
     var photoImage: Image?
@@ -70,6 +72,8 @@ class NewNoteViewModel {
             print(error.localizedDescription)
         }
     }
+
+    
     
     init(saved: @escaping () -> Void) {
         self.saved = saved

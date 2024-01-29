@@ -52,7 +52,7 @@ struct ContentView: View {
                 NewNoteView(saved: {
                     viewModel.loadNotes()
                 })
-                    .presentationDetents([.medium, .large])
+                    .presentationDetents([.large])
                     .presentationBackground(.ultraThinMaterial)
             })
             .navigationTitle("PhotoNote")

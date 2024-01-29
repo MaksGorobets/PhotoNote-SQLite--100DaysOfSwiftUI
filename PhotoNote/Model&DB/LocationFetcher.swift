@@ -4,6 +4,8 @@
 //
 //  Created by Maks Winters on 27.01.2024.
 //
+// https://developer.apple.com/documentation/corelocation/converting_between_coordinates_and_user-friendly_place_names
+//
 
 import Foundation
 import CoreLocation
@@ -32,4 +34,16 @@ class LocationFetcher: NSObject, ObservableObject, CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("Location error: \(error.localizedDescription)")
     }
+    
+    func lookUpCurrentLocation(rawLocation: CLLocationCoordinate2D, completionHandler: @escaping (String) -> Void) {
+        let lastLocation = CLLocation(latitude: rawLocation.latitude, longitude: rawLocation.longitude)
+            let geocoder = CLGeocoder()
+                
+            geocoder.reverseGeocodeLocation(lastLocation, completionHandler: { (placemarks, error) in
+                    let country = placemarks?[0].country
+                    let city = placemarks?[0].locality
+                    completionHandler("\(city ?? "area"), \(country ?? "Unknown")")
+            })
+    }
+    
 }

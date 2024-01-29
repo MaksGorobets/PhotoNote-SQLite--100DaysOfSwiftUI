@@ -22,12 +22,20 @@ struct NewNoteView: View {
                     .scaledToFit()
                     .clipShape(RoundedRectangle(cornerRadius: 25.0))
                     .padding()
-                    .transition(.scale)
+            } else {
+                Image(systemName: "photo")
+                    .resizable()
+                    .scaledToFit()
+                    .background(.blue)
+                    .clipShape(RoundedRectangle(cornerRadius: 30.0))
+                    .padding()
             }
-            TextField("Enter note title", text: $viewModel.title)
-                .padding()
-            PhotosPicker("Pick a photo", selection: $viewModel.pickerItem, matching: .images)
-                .buttonStyle(.bordered)
+            HStack {
+                TextField("Enter note title", text: $viewModel.title)
+                PhotosPicker("Pick a photo", selection: $viewModel.pickerItem, matching: .images)
+                    .buttonStyle(.bordered)
+            }
+            .padding()
             
                 .toolbar {
                     Button("Done") {
@@ -35,8 +43,18 @@ struct NewNoteView: View {
                         dismiss()
                     }
                 }
-            Map(position: $viewModel.currentPos)
-                .frame(height: 300)
+            Map(position: $viewModel.currentPos) {
+                Marker("Place", coordinate: viewModel.rawLocation)
+            }
+                .frame(height: 250)
+                .allowsHitTesting(false)
+            Text(viewModel.locationString)
+                .onAppear {
+                    viewModel.locationFetcher.lookUpCurrentLocation(rawLocation: viewModel.rawLocation)
+                    { placeStr in
+                            viewModel.locationString = placeStr
+                    }
+                }
             Spacer()
                 .onAppear {
                     viewModel.setLocation()
